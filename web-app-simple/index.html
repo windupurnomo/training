@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Training Java Spring</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body ng-app="app" ng-controller="Ctrl">
+    <div class="container">
+    	<h2>User Form</h2>
+        <form class="col-md-4">
+            <div class="form-group">
+                <label>ID</label>
+                <input type="text" class="form-control" ng-model="user.id" disabled>
+            </div>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" ng-model="user.name">
+            </div>
+            <button ng-click="cancel()" ng-if="user" type="submit" class="btn btn-warning">Cancel</button>
+            <button ng-click="save()" type="submit" class="btn btn-primary">Simpan</button>
+            <button ng-click="delete()" type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        <table class="table col-md-5" style="margin-top: 30px">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            <tr ng-repeat="u in users" ng-click="change(u)">
+                <td>{{u.id}}</td>
+                <td>{{u.name}}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
